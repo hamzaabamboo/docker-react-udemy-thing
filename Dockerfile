@@ -12,6 +12,9 @@ RUN npm run build
 
 FROM nginx 
 
+# Elastic beanstalk auto map thing
+EXPOSE 80
+
 WORKDIR /app 
 
 COPY --from=builder /app/build /usr/share/nginx/html
